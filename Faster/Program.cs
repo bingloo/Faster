@@ -22,7 +22,7 @@ namespace Faster
             Mutex mt = new Mutex(true, "FASTER_APP", out createdNew);
             if (createdNew)
             {
-                new AppGlobalExcept().Run();
+                new AppExcept().Run();
 
                 new AppMain().Run();
 

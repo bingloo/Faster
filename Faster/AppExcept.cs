@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Faster
 {
-    public class AppGlobalExcept
+    public class AppExcept
     {
         private class ExceptData
         {

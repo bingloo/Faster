@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster.Module;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +14,13 @@ namespace Faster
 {
     public class AppMain
     {
+        public void Run()
+        {
+            CreateTray();
+            SetTrayClick();
+
+            SetCapsLockMonitor();
+        }
 
         private NotifyIcon myNotify = null;
         private void CreateTray()
@@ -23,7 +31,7 @@ namespace Faster
             myNotify.ContextMenuStrip = CreateTrayMenu();
 
             myNotify.Visible = true;
-            
+
         }
 
         private ContextMenuStrip CreateTrayMenu()
@@ -42,6 +50,18 @@ namespace Faster
             menuStrip.Items.AddRange(new MenuBuilder.BottomMenuBuilder().MenuItems);
 
             return menuStrip;
+        }
+
+        private void SetTrayClick()
+        {
+            myNotify.MouseDoubleClick += (sender, e) =>
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    // 模拟按下 Caps Lock 键
+                    CapslockInput.Input();
+                }
+            };
         }
 
         private void SetCapsLockMonitor()
@@ -86,12 +106,5 @@ namespace Faster
             }
         }
 
-        public void Run()
-        {
-            CreateTray();
-
-            SetCapsLockMonitor();
-
-        }
     }
 }

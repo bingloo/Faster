@@ -127,7 +127,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppGlobalExcept.cs" />
+    <Compile Include="AppExcept.cs" />
     <Compile Include="AppMain.cs" />
     <Compile Include="FlyUI\AnimationDirection.cs" />
     <Compile Include="FlyUI\AnimationManager.cs" />
@@ -145,6 +145,7 @@
     <Compile Include="MenuBuilder\MenuBuilderBase.cs" />
     <Compile Include="MenuBuilder\PowerMenuBuilder.cs" />
     <Compile Include="MenuBuilder\TopMenuBuilder.cs" />
+    <Compile Include="Module\CapslockInput.cs" />
     <Compile Include="Module\CapsLockMonitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
